@@ -1,0 +1,44 @@
+package com.hexaware.MLP146.factory;
+import com.hexaware.MLP146.model.Customer;
+import com.hexaware.MLP146.persistence.CustomerDAO;
+import com.hexaware.MLP146.persistence.DbConnection;
+import java.util.List;
+/**
+ * CustomerFactory class used to fetch Customer data from database.
+ * @author hexware
+ */
+public class CustomerFactory {
+  /**
+   *protected constructor.
+   */
+   /**
+*call the data base connection.
+*/
+  protected CustomerFactory() {
+
+  }
+
+/**
+ *call the data base connection.
+  @param cusId for customer Id.
+  @param cPass for customer Password.
+ *@return customer.
+ */
+  public static Customer usrlogin(final int cusId, final String cPass) {
+    Customer customer = dao().usrlogin(cusId, cPass);
+    return customer;
+  }
+/**
+ *call the data base connection.
+  @param cusId for customer Id.
+ *@return customer.
+ */
+  public static Customer[] showCustDetails(final int cusId) {
+    List<Customer> customer = dao().showCustDetails(cusId);
+    return customer.toArray(new Customer[customer.size()]);
+  }
+  private static CustomerDAO dao() {
+    DbConnection db = new DbConnection();
+    return db.getConnect().onDemand(CustomerDAO.class);
+  }
+}
