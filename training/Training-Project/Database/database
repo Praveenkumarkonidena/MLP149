@@ -1,0 +1,12 @@
+show databases;
+create database ftpdb;
+use ftpdb;
+show tables;
+CREATE TABLE trainings (tid int, training_name varchar(20));
+insert into trainings values (125,'Angular');
+insert into trainings values(126,'Angular1'),(127,'Angular2'),(128,'Angular4');
+
+select * from trainings;
+
+delete from trainings where tid=99;
+set SQL_SAFE_UPDATES=0;

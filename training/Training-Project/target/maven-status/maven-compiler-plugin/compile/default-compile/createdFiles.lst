@@ -1,0 +1,6 @@
+com\hexa\training\persistence\TrainingDao.class
+com\hexa\training\persistence\DbConnection.class
+com\hexa\training\util\CliMain.class
+com\hexa\training\model\Training.class
+com\hexa\training\factory\TrainingFactory.class
+com\hexa\training\persistence\TrainingMapper.class
